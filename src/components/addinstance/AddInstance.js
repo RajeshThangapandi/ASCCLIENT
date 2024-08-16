@@ -15,7 +15,7 @@ const AddInstance = () => {
 
   useEffect(() => {
     // Fetch course data for dropdown options
-    fetch('http://127.0.0.1:8000/api/courses/')
+    fetch('https://server-ophc.onrender.com/api/courses/')
       .then(response => response.json())
       .then(data => {
         // Set dropdown options with course codes
@@ -49,7 +49,7 @@ const AddInstance = () => {
       course_code: dropdownValue,
     };
 
-    fetch('http://127.0.0.1:8000/api/instances/', {
+    fetch('https://server-ophc.onrender.com/api/instances/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
