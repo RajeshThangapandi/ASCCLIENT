@@ -26,8 +26,9 @@ const AddCourse = () => {
     e.preventDefault();
     console.log('Course Data:', courseData);
 
+    
     // Here you would typically send the courseData to your backend API
-    fetch('http://127.0.0.1:8000/api/courses/', {
+    fetch('https://server-ophc.onrender.com/api/courses/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
