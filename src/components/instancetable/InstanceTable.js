@@ -18,7 +18,7 @@ const InstanceTable = () => {
 
   useEffect(() => {
     // Fetch instance data from the API
-    fetch('http://127.0.0.1:8000/api/instances/')
+    fetch('https://server-ophc.onrender.com/api/instances/')
       .then(response => response.json())
       .then(data => {
         setInstances(data);
@@ -32,7 +32,7 @@ const InstanceTable = () => {
 
         // Fetch detailed data for each instance
         const fetchDetails = data.map(instance =>
-          fetch(`http://127.0.0.1:8000/api/instances/${instance.year}/${instance.semester}/${instance.course_code}/`)
+          fetch(`https://server-ophc.onrender.com/api/instances/${instance.year}/${instance.semester}/${instance.course_code}/`)
             .then(response => {
               if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -71,7 +71,7 @@ const InstanceTable = () => {
 
   const handleDeleteClick = (instance) => {
     if (window.confirm('Are you sure you want to delete this instance?')) {
-      fetch(`http://127.0.0.1:8000/api/instances/${instance.year}/${instance.semester}/${instance.course_code}/delete/`, {
+      fetch(`https://server-ophc.onrender.com/${instance.year}/${instance.semester}/${instance.course_code}/delete/`, {
         method: 'DELETE'
       })
         .then(response => {
