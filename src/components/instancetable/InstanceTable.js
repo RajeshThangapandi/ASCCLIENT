@@ -71,7 +71,7 @@ const InstanceTable = () => {
 
   const handleDeleteClick = (instance) => {
     if (window.confirm('Are you sure you want to delete this instance?')) {
-      fetch(`https://server-ophc.onrender.com/${instance.year}/${instance.semester}/${instance.course_code}/delete/`, {
+      fetch(`https://server-ophc.onrender.com/api/instances/${instance.year}/${instance.semester}/${instance.course_code}/delete/`, {
         method: 'DELETE'
       })
         .then(response => {
