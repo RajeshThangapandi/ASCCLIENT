@@ -11,7 +11,7 @@ const CourseTable = () => {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://127.0.0.1:8000/api/courses/')
+    fetch('https://server-ophc.onrender.com/api/courses/')
       .then(response => response.json())
       .then(data => setCourses(data))
       .catch(error => console.error('Error fetching courses:', error));
@@ -25,7 +25,7 @@ const CourseTable = () => {
   const handleDeleteClick = (course_code) => {
     // Confirm deletion
     if (window.confirm('Are you sure you want to delete this course?')) {
-      fetch(`http://127.0.0.1:8000/api/courses/${course_code}/`, {
+      fetch(`https://server-ophc.onrender.com/api/courses/${course_code}/`, {
         method: 'DELETE',
       })
         .then(response => {
