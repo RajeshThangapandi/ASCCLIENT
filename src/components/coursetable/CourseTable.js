@@ -11,7 +11,7 @@ const CourseTable = () => {
 
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://localhost:8000/api/courses/')
+    fetch('https://server-ophc.onrender.com/api/courses/')
       .then(response => response.json())
       .then(data => setCourses(data))
       .catch(error => console.error('Error fetching courses:', error));
